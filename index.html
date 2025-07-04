@@ -76,6 +76,12 @@
         .portfolio-thumbnail:hover .play-icon {
             background-color: rgba(168, 85, 247, 0.7);
         }
+        .depoimento-card {
+            transition: transform 0.3s ease;
+        }
+        .depoimento-card:hover {
+            transform: scale(1.03);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -86,6 +92,7 @@
             <nav class="hidden md:flex space-x-8">
                 <a href="#servicos" class="text-gray-300 hover:text-white transition">Serviços</a>
                 <a href="#portfolio" class="text-gray-300 hover:text-white transition">Portfólio</a>
+                <a href="#depoimentos" class="text-gray-300 hover:text-white transition">Depoimentos</a>
                 <a href="#sobre" class="text-gray-300 hover:text-white transition">Sobre</a>
             </nav>
             <a href="#contato" class="cta-button text-white font-semibold px-5 py-2 rounded-lg hidden md:inline-block">
@@ -98,6 +105,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
             <a href="#servicos" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Serviços</a>
             <a href="#portfolio" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Portfólio</a>
+            <a href="#depoimentos" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Depoimentos</a>
             <a href="#sobre" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Sobre</a>
             <a href="#contato" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Contato</a>
         </div>
@@ -205,7 +213,38 @@
             </div>
         </section>
 
-        <section id="sobre" class="py-20">
+        <section id="depoimentos" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-white inline-block section-title">A Prova Social que Você Confia</h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Veja o que nossos clientes estão dizendo sobre a parceria com a Zacchi Vídeos IA.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                    
+                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card">
+                        <img src="images/whatsapp_fernanda.png" alt="Depoimento da cliente Fernanda" class="w-full h-auto object-cover">
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card">
+                        <img src="images/whatsapp_rafael.png" alt="Depoimento do cliente Rafael" class="w-full h-auto object-cover">
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card">
+                        <img src="images/whatsapp_juliana.png" alt="Depoimento da cliente Juliana" class="w-full h-auto object-cover">
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card sm:col-start-1 lg:col-start-auto">
+                        <img src="images/whatsapp_ana.png" alt="Depoimento da cliente Ana" class="w-full h-auto object-cover">
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card">
+                        <img src="images/whatsapp_carlos.png" alt="Depoimento do cliente Carlos" class="w-full h-auto object-cover">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="sobre" class="py-20 bg-gray-900/50">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center">
                     <h2 class="text-4xl font-bold text-white mb-6 inline-block section-title">Onde a Tecnologia Encontra a Estratégia</h2>
@@ -216,7 +255,7 @@
             </div>
         </section>
 
-        <section id="contato" class="py-20 bg-gray-900/50">
+        <section id="contato" class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold text-white">Vamos Tirar Sua Ideia do Papel?</h2>
                 <p class="text-gray-400 mt-4 mb-8 max-w-2xl mx-auto">Estamos prontos para ouvir sobre seu projeto e desenhar uma estratégia para alcançar seus objetivos. A primeira conversa é por nossa conta.</p>
@@ -251,9 +290,3 @@
         for (let link of mobileMenuLinks) {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
-            });
-        }
-    </script>
-
-</body>
-</html>
