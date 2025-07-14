@@ -1,297 +1,374 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zacchi Vídeos IA - Vídeos com IA e Tráfego Pago</title>
-    <meta name="description" content="Transformamos suas ideias em vídeos que capturam a atenção e conectamos sua marca ao público certo com gestão de tráfego e redes sociais de alta performance.">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <title>BlackIA.Agency - Inteligência Artificial para o Sucesso da Sua Empresa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #000; /* Preto */
+            --secondary-color: #f7931e; /* Laranja do logo */
+            --text-light: #f4f4f4;
+            --text-dark: #333;
+            --grey-bg: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a; /* Fundo principal quase preto */
-            color: #f5f5f5; /* Texto principal claro */
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #4f46e5, #c026d3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .glass-card {
-            background: rgba(23, 23, 23, 0.6); /* Fundo do card semi-transparente */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px 0;
+            border-bottom: 5px solid var(--secondary-color);
         }
-        .cta-button {
-            background: linear-gradient(90deg, #4f46e5, #a855f7);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+
+        header .logo {
+            display: flex;
+            align-items: center;
         }
-        .section-title {
-            border-left: 4px solid #8b5cf6;
-            padding-left: 1rem;
+
+        header .logo img {
+            height: 50px; /* Ajuste conforme o tamanho do seu logo */
+            margin-right: 10px;
         }
-        .portfolio-thumbnail {
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            border-radius: 1rem;
+
+        header .logo h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--text-light);
         }
-        .portfolio-thumbnail img {
-            transition: transform 0.3s ease;
+
+        nav ul {
+            list-style: none;
+            display: flex;
         }
-        .portfolio-thumbnail:hover img {
-            transform: scale(1.05);
+
+        nav ul li {
+            margin-left: 30px;
         }
-        .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            /* Usando o logo como background com overlay */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://googleusercontent.com/image_generation_content/1') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.3s ease;
+            flex-direction: column;
         }
-        .portfolio-thumbnail:hover .play-icon {
-            background-color: rgba(168, 85, 247, 0.7);
+
+        .hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
         }
-        .depoimento-card {
-            transition: transform 0.3s ease;
+
+        .hero p {
+            font-size: 1.5em;
+            max-width: 800px;
+            margin-bottom: 40px;
+            font-family: 'Roboto', sans-serif;
         }
-        .depoimento-card:hover {
-            transform: scale(1.03);
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background-color: #e07b00; /* Tom mais escuro do laranja */
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section h3 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        section h3::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .services-grid, .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item, .feature-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .service-item:hover, .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item h4, .feature-item h4 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .service-item p, .feature-item p {
+            font-size: 1.1em;
+            color: var(--text-dark);
+        }
+
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background-color: #333;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .contact-item p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .contact-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #fff;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 15px 10px;
+            }
+
+            .hero h2 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            section h3 {
+                font-size: 2em;
+            }
+
+            .services-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body class="antialiased">
-
-    <header class="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-lg border-b border-gray-800">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold gradient-text">Zacchi Vídeos IA</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#servicos" class="text-gray-300 hover:text-white transition">Serviços</a>
-                <a href="#portfolio" class="text-gray-300 hover:text-white transition">Portfólio</a>
-                <a href="#depoimentos" class="text-gray-300 hover:text-white transition">Depoimentos</a>
-                <a href="#sobre" class="text-gray-300 hover:text-white transition">Sobre</a>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="http://googleusercontent.com/image_generation_content/1" alt="BlackIA.Agency Logo">
+                <h1>BlackIA.Agency</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#vantagens">Vantagens</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
             </nav>
-            <a href="#contato" class="cta-button text-white font-semibold px-5 py-2 rounded-lg hidden md:inline-block">
-                Fale Conosco
-            </a>
-            <button id="mobile-menu-button" class="md:hidden text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
-            <a href="#servicos" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Serviços</a>
-            <a href="#portfolio" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Portfólio</a>
-            <a href="#depoimentos" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Depoimentos</a>
-            <a href="#sobre" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Sobre</a>
-            <a href="#contato" class="block text-center py-3 text-gray-300 hover:bg-gray-800">Contato</a>
         </div>
     </header>
 
-    <main>
-        <section id="inicio" class="min-h-screen flex items-center pt-24 pb-12" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');">
-            <div class="container mx-auto px-6 text-center">
-                <div class="max-w-4xl mx-auto">
-                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
-                        Criatividade <span class="gradient-text">Potencializada por I.A.</span> Resultados Impulsionados por Estratégia.
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
-                        Transformamos suas ideias em vídeos que capturam a atenção e conectamos sua marca ao público certo com gestão de tráfego e redes sociais de alta performance.
-                    </p>
-                    <a href="#contato" class="cta-button text-white font-bold px-8 py-4 rounded-lg text-lg inline-block">
-                        QUERO UM ORÇAMENTO
-                    </a>
+    <section class="hero">
+        <div class="container">
+            <h2>Impulsione Suas Vendas Online com o Poder da Inteligência Artificial</h2>
+            <p>A BlackIA.Agency transforma o marketing da sua empresa com soluções inovadoras em vídeo, automação, tráfego pago e agentes de IA.</p>
+            <a href="https://wa.me/5511991725823?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20BlackIA.Agency." target="_blank" class="btn">Fale Conosco via WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h3>Nossos Serviços de IA para o Crescimento do Seu Negócio</h3>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>Vídeos e Comerciais com Inteligência Artificial</h4>
+                    <p>Criamos vídeos comerciais e propaganda de alto impacto para a internet, utilizando inteligência artificial para otimizar roteiros, produção e performance. Inclui também a criação de vídeos a partir de fotos para campanhas dinâmicas.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Tráfego Pago Otimizado por IA</h4>
+                    <p>Gerenciamento e otimização de campanhas de tráfego pago (Google Ads, Meta Ads, etc.) com estratégias baseadas em IA para maximizar seu ROI e alcançar o público certo com maior precisão.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Automação e Agentes de IA</h4>
+                    <p>Desenvolvemos soluções de automação e implementamos agentes de IA para otimizar processos internos, atendimento ao cliente, geração de leads e muito mais, liberando sua equipe para o que realmente importa.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Consultoria em Estratégias de IA</h4>
+                    <p>Oferecemos consultoria especializada para integrar a inteligência artificial em diversas áreas da sua empresa, identificando oportunidades e desenvolvendo soluções personalizadas para seus desafios.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="servicos" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                     <h2 class="text-4xl font-bold text-white inline-block section-title">Soluções que Elevam sua Presença Digital</h2>
-                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Oferecemos a combinação perfeita entre arte e dados para fazer sua empresa crescer.</p>
+    <section id="vantagens" style="background-color: var(--grey-bg);">
+        <div class="container">
+            <h3>Por Que Escolher a BlackIA.Agency?</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Expertise em IA e Marketing</h4>
+                    <p>Combinamos profundo conhecimento em inteligência artificial com estratégias de marketing digital para resultados reais e mensuráveis.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center">
-                        <div class="bg-indigo-500/20 p-4 rounded-full mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Vídeos Criativos com I.A.</h3>
-                        <p class="text-gray-400">Produza conteúdo em vídeo de alto impacto, com agilidade e um custo-benefício imbatível. Deixe a inteligência artificial criar visuais impressionantes enquanto focamos no roteiro que converte.</p>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center">
-                         <div class="bg-indigo-500/20 p-4 rounded-full mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Gestão de Tráfego Pago</h3>
-                        <p class="text-gray-400">Colocamos seus anúncios na frente de quem realmente quer comprar. Campanhas otimizadas no Google, Instagram e Facebook para maximizar seu ROI e gerar leads qualificados.</p>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center">
-                         <div class="bg-indigo-500/20 p-4 rounded-full mb-6">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Gestão de Redes Sociais</h3>
-                        <p class="text-gray-400">Construímos uma comunidade engajada em torno da sua marca. Criamos conteúdo relevante, gerenciamos a interação e transformamos seguidores em clientes fiéis.</p>
-                    </div>
+                <div class="feature-item">
+                    <h4>Soluções Personalizadas</h4>
+                    <p>Cada negócio é único. Criamos soluções sob medida que se alinham perfeitamente aos seus objetivos e desafios.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Foco em Resultados</h4>
+                    <p>Nosso principal objetivo é o seu sucesso. Trabalhamos para aumentar suas vendas, otimizar processos e gerar mais lucro.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Inovação Constante</h4>
+                    <p>Estamos sempre atualizados com as últimas tendências e tecnologias em IA para oferecer o que há de mais moderno e eficiente.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="portfolio" class="py-20 bg-gray-900/50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-white inline-block section-title">Veja a Mágica Acontecer</h2>
-                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Estes são alguns exemplos do que podemos criar. Imagine o que podemos fazer pela sua marca.</p>
+    <section id="contato" class="cta-section">
+        <div class="container">
+            <h3>Pronto para Transformar Sua Empresa com IA?</h3>
+            <p>Entre em contato hoje mesmo e descubra como a BlackIA.Agency pode impulsionar suas vendas e otimizar suas operações.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p>WhatsApp:</p>
+                    <a href="https://wa.me/5511991725823?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20BlackIA.Agency." target="_blank">+55 11 99172-5823</a>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                    
-                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col">
-                        <a href="Https://youtu.be/pavfjB0cCus?si=NnflxIv2USmstxjQ" target="_blank" class="portfolio-thumbnail">
-                            <img src="https://img.youtube.com/vi/_f_X_8V2wA/hqdefault.jpg" alt="Miniatura do vídeo 1" class="w-full h-full object-cover">
-                            <div class="play-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                            </div>
-                        </a>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white">Vídeo de Apresentação de Produto</h3>
-                            <p class="text-gray-400 mt-2">Clique na imagem para assistir ao vídeo diretamente no YouTube.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col">
-                         <a href="https://youtube.com/shorts/iocuucHZu74?si=13Z8t9EMKLGktaLT" target="_blank" class="portfolio-thumbnail">
-                            <img src="https://img.youtube.com/vi/0tq6g-K5d_s/hqdefault.jpg" alt="Miniatura do vídeo 2" class="w-full h-full object-cover">
-                            <div class="play-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                            </div>
-                        </a>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white">Anúncio Rápido para Redes Sociais</h3>
-                            <p class="text-gray-400 mt-2">Clique na imagem para assistir ao vídeo diretamente no YouTube.</p>
-                        </div>
-                    </div>
-
-                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col">
-                        <a href="https://youtu.be/RamOYhYLs9k?si=DGtztlRQpf6E_f-Z" target="_blank" class="portfolio-thumbnail">
-                            <img src="https://img.youtube.com/vi/m8i3-t4d-Y/hqdefault.jpg" alt="Miniatura do vídeo 3" class="w-full h-full object-cover">
-                             <div class="play-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                            </div>
-                        </a>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white">Vídeo Institucional com Storytelling</h3>
-                            <p class="text-gray-400 mt-2">Clique na imagem para assistir ao vídeo diretamente no YouTube.</p>
-                        </div>
-                    </div>
-
+                <div class="contact-item">
+                    <p>Email:</p>
+                    <a href="mailto:blackia.agency@gmail.com">blackia.agency@gmail.com</a>
                 </div>
             </div>
-        </section>
+            <a href="https://wa.me/5511991725823?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20BlackIA.Agency." target="_blank" class="btn" style="margin-top: 40px;">Converse Conosco Agora!</a>
+        </div>
+    </section>
 
-        <section id="depoimentos" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-white inline-block section-title">A Prova Social que Você Confia</h2>
-                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Veja o que nossos clientes estão dizendo sobre a parceria com a Zacchi Vídeos IA.</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                    
-                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card">
-                        <img src="whatsapp_fernanda.png" alt="Depoimento da cliente Fernanda" class="w-full h-auto object-cover">
-                    </div>
-
-                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card">
-                        <img src="whatsapp_rafael.png" alt="Depoimento do cliente Rafael" class="w-full h-auto object-cover">
-                    </div>
-
-                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card">
-                        <img src="whatsapp_juliana.png" alt="Depoimento da cliente Juliana" class="w-full h-auto object-cover">
-                    </div>
-
-                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card sm:col-start-1 lg:col-start-auto">
-                        <img src="whatsapp_ana.png" alt="Depoimento da cliente Ana" class="w-full h-auto object-cover">
-                    </div>
-
-                    <div class="glass-card rounded-2xl overflow-hidden depoimento-card">
-                        <img src="whatsapp_carlos.png" alt="Depoimento do cliente Carlos" class="w-full h-auto object-cover">
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <section id="sobre" class="py-20 bg-gray-900/50">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-4xl font-bold text-white mb-6 inline-block section-title">Onde a Tecnologia Encontra a Estratégia</h2>
-                    <p class="text-lg text-gray-300">
-                        A <span class="font-bold gradient-text">Zacchi Vídeos IA</span> nasceu para resolver um problema: unir a agilidade da criação de vídeos com inteligência artificial com a sensibilidade e a experiência de estrategistas de marketing digital. Não somos apenas uma ferramenta; somos seu parceiro estratégico para o crescimento. Acreditamos que a tecnologia deve acelerar a criatividade humana, e cada projeto nosso tem o melhor dos dois mundos: a eficiência da IA e a inteligência de especialistas focados no seu sucesso.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contato" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold text-white">Vamos Tirar Sua Ideia do Papel?</h2>
-                <p class="text-gray-400 mt-4 mb-8 max-w-2xl mx-auto">Estamos prontos para ouvir sobre seu projeto e desenhar uma estratégia para alcançar seus objetivos. A primeira conversa é por nossa conta.</p>
-                <a href="https://wa.me/5511991725823?text=Olá!%20Vim%20pelo%20site%20da%20Zacchi%20Vídeos%20IA%20e%20gostaria%20de%20um%20orçamento." 
-                   target="_blank" 
-                   class="cta-button text-white font-bold px-10 py-4 rounded-lg text-xl inline-flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp mr-3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    Chamar no WhatsApp
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="border-t border-gray-800 py-8">
-        <div class="container mx-auto px-6 text-center text-gray-500">
-            <p>© 2024 Zacchi Vídeos IA. Todos os direitos reservados.</p>
-            <p class="mt-2">metodoalfa.zacchi@gmail.com</p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlackIA.Agency. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <script>
-        // Script para menu mobile
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Fecha o menu mobile ao clicar em um link
-        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-        for (let link of mobileMenuLinks) {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        }
-    </script>
 </body>
 </html>
